@@ -10,3 +10,6 @@ Menu Items
 - Password Change/Options
 - Lock
 - Exit
+
+Function Ideas:
+- A forget password function
