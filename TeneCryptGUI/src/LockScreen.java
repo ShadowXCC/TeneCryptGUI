@@ -42,7 +42,7 @@ public class LockScreen extends Worker{
 				try {
 					Boolean authenticate = PasswordChecker.Activate(getPassword);
 					if(authenticate == true) {
-						Scene scene = MainPart.Activate();
+						//Scene scene = MainPart.Activate();
 						scene.getStylesheets().add("style.css");
 						window.setScene(scene);
 					}
@@ -67,7 +67,7 @@ public class LockScreen extends Worker{
 			try {
 				Boolean authenticate = PasswordChecker.Activate(getPassword);
 				if(authenticate == true) {
-					Scene scene = MainPart.Activate();
+					//Scene scene = MainPart.Activate();
 					scene.getStylesheets().add("style.css");
 					window.setScene(scene);
 				}
