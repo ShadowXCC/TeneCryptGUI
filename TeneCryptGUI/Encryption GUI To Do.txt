@@ -1,6 +1,6 @@
 Current Problems:
-- There are no multiple chances to get the password
-- Password Tries Left counter is messed up
+- There are no unlimited chances to get the password
+- Window can't be moved
 
 Menu Items
 - Logo
