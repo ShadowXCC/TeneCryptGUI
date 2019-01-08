@@ -15,7 +15,11 @@ public class ConfigMaker {
 		int NameLength = 75;
 		
 		boolean DoesItExist = new File(FileName).isFile();
-		if(DoesItExist == false){
+		
+		File DataFolder = new File("/Data");
+		boolean DoesDataFolderExist = DataFolder.isDirectory();
+		
+		if(DoesItExist == false && DoesDataFolderExist == false){
 			FileWriter fw = new FileWriter(FileName);
 			PrintWriter output = new PrintWriter(fw);
 			for(int b = 1; b <= NumOfFiles; b++){

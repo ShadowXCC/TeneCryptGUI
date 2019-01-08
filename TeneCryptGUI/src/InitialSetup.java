@@ -1,5 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -8,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -15,6 +18,8 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
 public class InitialSetup extends Worker{
+	private static double xOffset = 0;
+	private	static double yOffset = 0;
 	public static Scene Activate() throws IOException{
 		window.setTitle("TeneCrypt - Setup");
 		
@@ -39,11 +44,11 @@ public class InitialSetup extends Worker{
 		TextBox.setMaxHeight(87.75);
 		Button Stepper = new Button("Next");
 	
-		//Config Maker
-		ConfigMaker.Activate();
-		
 		//Folder Architecture Maker
 		FolderArchitectureMaker.Activate();
+		
+		//Config Maker
+		ConfigMaker.Activate();
 		
 		//CD Key Check
 		describer.setText("Please enter your CD Key:");
@@ -72,7 +77,7 @@ public class InitialSetup extends Worker{
 					ppKey = PPKeyCreator.Activate();
 				} catch (IOException e) {
 					e.printStackTrace();
-				}//Returns the value of PPKeyCreator
+				}
 				TextBox.setWrapText(true);
 				TextBox.setMaxHeight(175.5);
 				TextBox.setEditable(false);
@@ -100,6 +105,20 @@ public class InitialSetup extends Worker{
 		borderPane.setTop(topMenu);
 		borderPane.setCenter(centerMenu);
 		Scene scene = new Scene(borderPane, 1040, 585);
+		
+		borderPane.setOnMousePressed(new EventHandler<MouseEvent>() {
+	        public void handle(MouseEvent event) {
+	            xOffset = event.getSceneX();
+	            yOffset = event.getSceneY();
+	        }
+	    });
+
+		borderPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
+	        public void handle(MouseEvent event) {
+	            window.setX(event.getScreenX() - xOffset);
+	            window.setY(event.getScreenY() - yOffset);
+	        }
+	    });
 		
 		return scene;
 	}
