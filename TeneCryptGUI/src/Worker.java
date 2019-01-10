@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.*;
@@ -15,10 +14,6 @@ public class Worker extends Application{
 		}
 
 		public void start(Stage primaryStage) throws IOException{
-			//scene = InitialSetup.Activate();
-			//scene = LockScreen.Activate();
-			//scene = Main.Activate();
-			
 			String FileName = "Data\\Config.shde";
 			boolean DoesItExist = new File(FileName).isFile();
 			
