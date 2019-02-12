@@ -37,6 +37,10 @@ public class Worker extends Application{
 			window.initStyle(StageStyle.UNDECORATED);
 			window.getIcons().add(new Image(this.getClass().getResourceAsStream("lockedIcon.png")));
 			
+			window.setOnCloseRequest((WindowEvent event) -> {
+				event.consume();
+			});
+			
 			window.show();
 	}
 }
