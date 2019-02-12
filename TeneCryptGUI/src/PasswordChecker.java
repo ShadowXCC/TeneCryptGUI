@@ -70,6 +70,7 @@ public class PasswordChecker {
 	    });
 
 		if(InputPass.equals(Pass)){
+			passwordTriesLeft = 3;
 			check = true;
 		}else if(!InputPass.equals(Pass)){
 			passwordTriesLeft--;
