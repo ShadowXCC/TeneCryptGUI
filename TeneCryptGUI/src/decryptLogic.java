@@ -9,6 +9,9 @@ public class decryptLogic {
 		String decrypted = Decrypter.Activate(unencoded);
 		
 		String unconverted = UnConverter.Activate(decrypted);
+		if(unconverted.equals("")) {
+			unconverted = "Incorrect Input Provided";
+		}
 		
 		return unconverted;
 	}
