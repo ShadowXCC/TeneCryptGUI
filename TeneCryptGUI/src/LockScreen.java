@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -7,15 +8,16 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
 public class LockScreen extends Worker{	
-	BorderPane borderPane = new BorderPane();
+	private static double xOffset = 0;
+	private	static double yOffset = 0;
 
 	public static Scene Activate() throws FileNotFoundException{
 		window.setTitle("TeneCrypt - Login");
@@ -42,7 +44,7 @@ public class LockScreen extends Worker{
 				try {
 					Boolean authenticate = PasswordChecker.Activate(getPassword);
 					if(authenticate == true) {
-						//Scene scene = MainPart.Activate();
+						Scene scene = MainPart.Activate();
 						scene.getStylesheets().add("style.css");
 						window.setScene(scene);
 					}
@@ -67,12 +69,12 @@ public class LockScreen extends Worker{
 			try {
 				Boolean authenticate = PasswordChecker.Activate(getPassword);
 				if(authenticate == true) {
-					//Scene scene = MainPart.Activate();
+					Scene scene = MainPart.Activate();
 					scene.getStylesheets().add("style.css");
 					window.setScene(scene);
 				}
 				else {
-					describer.setText("Incorrect Password," + message);
+					describer.setText("Incorrect Password, " + message);
 				}
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -90,10 +92,20 @@ public class LockScreen extends Worker{
 		borderPane.setCenter(centerMenu);
 		Scene scene = new Scene(borderPane, 1040, 585);
 
-		return scene;
-	}
+		borderPane.setOnMousePressed(new EventHandler<MouseEvent>() {
+	        public void handle(MouseEvent event) {
+	            xOffset = event.getSceneX();
+	            yOffset = event.getSceneY();
+	        }
+	    });
 
-	public Pane getBorderPane() {
-		return borderPane;
+		borderPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
+	        public void handle(MouseEvent event) {
+	            window.setX(event.getScreenX() - xOffset);
+	            window.setY(event.getScreenY() - yOffset);
+	        }
+	    });
+				
+		return scene;
 	}
 }

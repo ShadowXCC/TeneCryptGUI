@@ -1,0 +1,62 @@
+.root{
+	-fx-font-family: "Impact", Charcoal, sans-serif;
+	-background-image: linear-gradient(red, yellow);
+	-fx-background-color: #000000;
+	-fx-font-size: 15;
+}
+
+.label{
+	-fx-text-fill: #ff9966;
+	-fx-font-size: 20;
+}
+
+.button{
+	-fx-font-size: 25;
+	-fx-text-fill: #ff9966;
+	-fx-background-color: #000000;
+	-fx-border-color: #e5e5e5; 
+	-fx-border-width: 1px;
+}
+
+.button:hover {
+	-fx-cursor: hand;
+	-fx-text-fill: #000000;
+	-fx-background-color: #ff9966;
+}
+
+.password-field{
+	-fx-cursor: text;
+	-fx-text-fill: #000000;
+	-fx-background-color: #ff9966;
+}
+
+.text-area{
+	-fx-cursor: text;
+	-fx-text-fill: #e5e5e5;
+	
+	-fx-focus-color: transparent;
+	-fx-border-style: none;
+	-fx-background-radius: 0.0px;
+	-fx-border-radius: 0.0px;
+}
+
+.text-field:focused {
+	-fx-focus-color: transparent;
+}
+
+.Setup *.text{
+    -fx-text-alignment: center;
+}
+
+.text-area .content{
+	-fx-background-color: #000000;
+}
+
+.context-menu{
+	-fx-background-color: #191919;
+}
+
+.alert{
+	-fx-border-color: #e5e5e5;
+	-fx-background-color: #191919;
+}
