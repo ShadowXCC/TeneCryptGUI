@@ -172,8 +172,16 @@ public class MainPart extends Worker{
 		button4.setOnAction(e -> {
 			centerMenu.getChildren().clear();
 			a.setText("Options");
+			buttonOne.setText("Change Password");
+			buttonOne.setOnAction(e1 -> {
+				try{
+					CustomPassword.Activate();
+				} catch(FileNotFoundException e2){
+					
+				}
+			});
 			
-			centerMenu.getChildren().addAll(a);
+			centerMenu.getChildren().addAll(a, buttonOne);
 		});
 		
 		Button button5 = new Button("Lock");
