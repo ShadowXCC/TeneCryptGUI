@@ -115,7 +115,7 @@ public class CustomPassword extends Worker{
 	        }
 	    });
 		
-		String passwordConfirmationAlertMessage = "";
+		/*String passwordConfirmationAlertMessage = "";
 		ButtonType yesButton = new ButtonType("Yes");
 		ButtonType noButton = new ButtonType("No");
 		
@@ -130,10 +130,12 @@ public class CustomPassword extends Worker{
 	    });
 		passwordConfirmationScene.setOnMouseDragged(new EventHandler<MouseEvent>() {
 	        public void handle(MouseEvent event) {
-	        	decisionStage.setX(event.getScreenX() - confirmationXOffset);
-	        	decisionStage.setY(event.getScreenY() - confirmationYOffset);
+	        	passwordConfirmationStage.setX(event.getScreenX() - confirmationXOffset);
+	        	passwordConfirmationStage.setY(event.getScreenY() - confirmationYOffset);
 	        }
-	    });
+	    });*/
+		ButtonType yesButton = new ButtonType("Yes");
+		ButtonType noButton = new ButtonType("No");
 		
 		Optional<ButtonType> option = decision.showAndWait();
 		try{
@@ -163,12 +165,25 @@ public class CustomPassword extends Worker{
 					Optional<String> result = newPasswordDialog.showAndWait();
 					if (result.isPresent()){
 					    newPassword = result.get();
-					    passwordConfirmationAlertMessage = "Your new password will be:\n\"" + newPassword + "\"\n\nDo you want to keep it?";
-						passwordConfirmationAlert = new Alert(AlertType.NONE, passwordConfirmationAlertMessage, yesButton, noButton);
-						passwordConfirmationScene = passwordConfirmationAlert.getDialogPane().getScene();
-						passwordConfirmationStage = (Stage) passwordConfirmationAlert.getDialogPane().getScene().getWindow();
+					    String passwordConfirmationAlertMessage = "Your new password will be:\n\"" + newPassword + "\"\n\nDo you want to keep it?";
+						Alert passwordConfirmationAlert = new Alert(AlertType.NONE, passwordConfirmationAlertMessage, yesButton, noButton);
+						Scene passwordConfirmationScene = passwordConfirmationAlert.getDialogPane().getScene();
+						Stage passwordConfirmationStage = (Stage) passwordConfirmationAlert.getDialogPane().getScene().getWindow();
 						passwordConfirmationScene.getStylesheets().add("style.css");
 						passwordConfirmationStage.initStyle(StageStyle.UNDECORATED);
+						passwordConfirmationScene.setOnMousePressed(new EventHandler<MouseEvent>() {
+					        public void handle(MouseEvent event) {
+					        	confirmationXOffset = event.getSceneX();
+					        	confirmationYOffset = event.getSceneY();
+					        }
+					    });
+						passwordConfirmationScene.setOnMouseDragged(new EventHandler<MouseEvent>() {
+					        public void handle(MouseEvent event) {
+					        	passwordConfirmationStage.setX(event.getScreenX() - confirmationXOffset);
+					        	passwordConfirmationStage.setY(event.getScreenY() - confirmationYOffset);
+					        }
+					    });
+						
 						Optional<ButtonType> passwordConfirmationOption = passwordConfirmationAlert.showAndWait();
 						if(passwordConfirmationOption.get() == yesButton){
 							File PassFile = new File(PassFilePath);
@@ -195,12 +210,25 @@ public class CustomPassword extends Worker{
 			if(option.get() == randomPasswordButton){
 				for(;;){
 					newPassword = PasswordCreatorChanger.Activate();
-					passwordConfirmationAlertMessage = "Your new password will be:\n\"" + newPassword + "\"\n\nDo you want to keep it?";
-					passwordConfirmationAlert = new Alert(AlertType.NONE, passwordConfirmationAlertMessage, yesButton, noButton);
-					passwordConfirmationScene = passwordConfirmationAlert.getDialogPane().getScene();
-					passwordConfirmationStage = (Stage) passwordConfirmationAlert.getDialogPane().getScene().getWindow();
+					String passwordConfirmationAlertMessage = "Your new password will be:\n\"" + newPassword + "\"\n\nDo you want to keep it?";
+					Alert passwordConfirmationAlert = new Alert(AlertType.NONE, passwordConfirmationAlertMessage, yesButton, noButton);
+					Scene passwordConfirmationScene = passwordConfirmationAlert.getDialogPane().getScene();
+					Stage passwordConfirmationStage = (Stage) passwordConfirmationAlert.getDialogPane().getScene().getWindow();
 					passwordConfirmationScene.getStylesheets().add("style.css");
 					passwordConfirmationStage.initStyle(StageStyle.UNDECORATED);
+					passwordConfirmationScene.setOnMousePressed(new EventHandler<MouseEvent>() {
+				        public void handle(MouseEvent event) {
+				        	confirmationXOffset = event.getSceneX();
+				        	confirmationYOffset = event.getSceneY();
+				        }
+				    });
+					passwordConfirmationScene.setOnMouseDragged(new EventHandler<MouseEvent>() {
+				        public void handle(MouseEvent event) {
+				        	passwordConfirmationStage.setX(event.getScreenX() - confirmationXOffset);
+				        	passwordConfirmationStage.setY(event.getScreenY() - confirmationYOffset);
+				        }
+				    });
+					
 					Optional<ButtonType> passwordConfirmationOption = passwordConfirmationAlert.showAndWait();
 					if(passwordConfirmationOption.get() == yesButton){						
 						File PassFile = new File(PassFilePath);
