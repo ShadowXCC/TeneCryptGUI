@@ -60,3 +60,8 @@
 	-fx-border-color: #e5e5e5;
 	-fx-background-color: #191919;
 }
+
+.dialog-pane {
+	-fx-border-color: #e5e5e5;
+    -fx-background-color: #191919;
+}
