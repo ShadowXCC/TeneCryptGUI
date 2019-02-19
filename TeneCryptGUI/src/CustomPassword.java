@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -50,8 +51,7 @@ public class CustomPassword extends Worker{
 		enterPasswordDialog.setContentText("Please enter your current password:");
 		Scene enterPasswordDialogScene = enterPasswordDialog.getDialogPane().getScene();
 		Stage enterPasswordDialogStage = (Stage) enterPasswordDialog.getDialogPane().getScene().getWindow();
-		//enterPasswordDialog.getIcons().add(new Image(test.class.getResourceAsStream("icon.png")));
-		//enterPasswordDialog.setGraphic(new ImageView(this.getClass().getResource("login.png").toString()));
+		enterPasswordDialog.setGraphic(new ImageView(CustomPassword.class.getResource("icon.png").toString()));
 		enterPasswordDialogScene.getStylesheets().add("style.css");
 		enterPasswordDialogStage.initStyle(StageStyle.UNDECORATED);
 		enterPasswordDialogScene.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -115,14 +115,13 @@ public class CustomPassword extends Worker{
 	        }
 	    });
 		
-		String passwordConfirmationAlertMessage = "Test message";
+		String passwordConfirmationAlertMessage = "";
 		ButtonType yesButton = new ButtonType("Yes");
 		ButtonType noButton = new ButtonType("No");
 		
 		Alert passwordConfirmationAlert = new Alert(null);
 		Scene passwordConfirmationScene = passwordConfirmationAlert.getDialogPane().getScene();
 		Stage passwordConfirmationStage = (Stage) passwordConfirmationAlert.getDialogPane().getScene().getWindow();
-		//passwordConfirmationStage.getIcons().add(new Image(test.class.getResourceAsStream("icon.png")));
 		passwordConfirmationScene.setOnMousePressed(new EventHandler<MouseEvent>() {
 	        public void handle(MouseEvent event) {
 	        	confirmationXOffset = event.getSceneX();
@@ -145,8 +144,7 @@ public class CustomPassword extends Worker{
 					newPasswordDialog.setContentText("Please enter your new password:");
 					Scene newPasswordDialogScene = newPasswordDialog.getDialogPane().getScene();
 					Stage newPasswordDialogStage = (Stage) newPasswordDialog.getDialogPane().getScene().getWindow();
-					//newPasswordDialogStage.getIcons().add(new Image(test.class.getResourceAsStream("icon.png")));
-					//enterNewPasswordDialog.setGraphic(new ImageView(this.getClass().getResource("login.png").toString()));
+					newPasswordDialog.setGraphic(new ImageView(CustomPassword.class.getResource("icon.png").toString()));
 					newPasswordDialogScene.getStylesheets().add("style.css");
 					newPasswordDialogStage.initStyle(StageStyle.UNDECORATED);
 					newPasswordDialogScene.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -182,11 +180,12 @@ public class CustomPassword extends Worker{
 							break;
 						}
 						else{
-							//Do nothing
+							//do nothing
 						}
 					}
 					else{
-						
+						newPasswordDialog.close();
+						break;
 					}
 				}
 				sf1.close();
@@ -208,8 +207,8 @@ public class CustomPassword extends Worker{
 						FileWriter fw = new FileWriter(PassFile);
 						PrintWriter output = new PrintWriter(fw);
 						
-						//String hashedNewPassword = hasher.Activate(newPassword);
-						output.print(newPassword);//output.print(hashedNewPassword);
+						//String newPassword = hasher.Activate(newPassword);
+						output.print(newPassword);
 						output.close();
 						break;
 					}
