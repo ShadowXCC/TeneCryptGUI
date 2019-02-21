@@ -71,7 +71,7 @@ public class CustomPassword extends Worker{
 			Optional<String> result = enterPasswordDialog.showAndWait();
 			if(result.isPresent()){
 				Current = result.get();
-				//Current = hasher.Activate(Current);//Hash Current here before comparing it to the hashed one
+				Current = hasher.Activate(Current);//Hash Current here before comparing it to the hashed one
 				if(Current.equals(PastPass)){
 					break;
 				}
@@ -189,7 +189,7 @@ public class CustomPassword extends Worker{
 							File PassFile = new File(PassFilePath);
 							FileWriter fw = new FileWriter(PassFile);
 							PrintWriter output = new PrintWriter(fw);
-							//newPassword = hasher.Activate(newPassword);
+							newPassword = hasher.Activate(newPassword);
 							output.print(newPassword);
 							output.close();
 							break;
@@ -235,7 +235,7 @@ public class CustomPassword extends Worker{
 						FileWriter fw = new FileWriter(PassFile);
 						PrintWriter output = new PrintWriter(fw);
 						
-						//String newPassword = hasher.Activate(newPassword);
+						newPassword = hasher.Activate(newPassword);
 						output.print(newPassword);
 						output.close();
 						break;
