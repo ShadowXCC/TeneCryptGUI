@@ -25,10 +25,6 @@ public class Worker extends Application{
 				scene = LockScreen.Activate();
 			}
 			
-			//scene = InitialSetup.Activate();
-			//scene = LockScreen.Activate();
-			//scene = MainPart.Activate();
-			
 			window.setScene(scene);
 			
 			//Global Effects

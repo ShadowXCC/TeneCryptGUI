@@ -4,22 +4,6 @@ public class PasswordCreatorChanger{
 	PasswordCreatorChanger(){	}
 	
 	public static String Activate(){
-		/*//Moved to file that calls this
-		String FP = "Data\\Config.shde";
-		File FF = new File(FP);
-		Scanner FileGuts = new Scanner(FF);
-		
-		String PassFilePath = null;
-		int WantedLineCount = 3;
-		for(int LineCount = 0;!(WantedLineCount==LineCount);LineCount++){
-			PassFilePath = FileGuts.nextLine() + ".shde";
-		}
-		PassFilePath = "Data\\" + PassFilePath;*/
-		//String PassFilePath = "passfile.txt";//Moved to file that calls this
-		
-		//File PassFile = new File(PassFilePath);//Moved to file that calls this
-		//FileWriter fw = new FileWriter(PassFile);//Moved to file that calls this
-		//PrintWriter output = new PrintWriter(fw);//Moved to file that calls this
 		SecureRandom PassGenerator = new SecureRandom();
 		
 		String newPassword = "";
@@ -213,13 +197,6 @@ public class PasswordCreatorChanger{
 				newPassword = newPassword + "0";
 			}
 		}
-		/*Moved to the class that calls this function
-		//String hashedNewPassword = hasher.Activate(newPassword);
-		//output.print(hashedNewPassword);
-		output.print(newPassword);
-		output.close();*/
-		
-		//FileGuts.close();
 		return newPassword;
 	}
 }
