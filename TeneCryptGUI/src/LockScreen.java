@@ -24,7 +24,7 @@ public class LockScreen extends Worker{
 		
 		HBox topMenu = new HBox();		
         final ImageView selectedImage = new ImageView();   
-		Image imageLogo = new Image(LockScreen.class.getResourceAsStream("Logo_1_260x94.png"));
+		Image imageLogo = new Image(LockScreen.class.getResourceAsStream("Logo.png"));
         selectedImage.setImage(imageLogo);
         topMenu.getChildren().addAll(selectedImage);
         topMenu.setAlignment(Pos.TOP_LEFT);

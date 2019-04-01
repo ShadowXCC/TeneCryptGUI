@@ -30,7 +30,7 @@ public class InitialSetup extends Worker{
 		
 		HBox topMenu = new HBox();		
 		final ImageView selectedImage = new ImageView();   
-		Image imageLogo = new Image(InitialSetup.class.getResourceAsStream("Logo_1_260x94.png"));
+		Image imageLogo = new Image(InitialSetup.class.getResourceAsStream("Logo.png"));
         selectedImage.setImage(imageLogo);
         topMenu.getChildren().addAll(left, selectedImage, right);
         topMenu.setAlignment(Pos.TOP_LEFT);

@@ -44,10 +44,16 @@ public class MainPart extends Worker{
 		centerMenu.setAlignment(Pos.CENTER);
 		
 		VBox leftMenu = new VBox();
-		final ImageView selectedImage = new ImageView();   
-		Image imageLogo = new Image(MainPart.class.getResourceAsStream("Logo_1_260x94.png"));
-		selectedImage.setImage(imageLogo);
-		Button button1 = new Button("Encrypt");
+		ImageView logoImageView = new ImageView();   
+		Image imageLogo = new Image(MainPart.class.getResourceAsStream("Logo.png"));
+		logoImageView.setImage(imageLogo);
+		
+		ImageView EncryptImageView = new ImageView();
+		Image encryptImage = new Image(MainPart.class.getResourceAsStream("lockedIcon.png"));
+		EncryptImageView.setImage(encryptImage);
+		EncryptImageView.setFitHeight(30);
+		EncryptImageView.setFitWidth(30);
+		Button button1 = new Button("Encrypt", EncryptImageView);
 		button1.setMinSize(260, 81.9);
 		button1.setOnAction(e -> {
 			centerMenu.getChildren().clear();
@@ -91,7 +97,12 @@ public class MainPart extends Worker{
 			centerMenu.getChildren().addAll(r, a, TextBox, doWork, r2, b, OutputTextBox, r3);
 		});
 		
-		Button button2 = new Button("Decrypt");
+		ImageView DecryptImageView = new ImageView();
+		Image DecryptImage = new Image(MainPart.class.getResourceAsStream("unlockedIcon.png"));
+		DecryptImageView.setImage(DecryptImage);
+		DecryptImageView.setFitHeight(30);
+		DecryptImageView.setFitWidth(30);
+		Button button2 = new Button("Decrypt", DecryptImageView);
 		button2.setMinSize(260, 81.9);
 		button2.setOnAction(e -> {
 			centerMenu.getChildren().clear();
@@ -135,7 +146,12 @@ public class MainPart extends Worker{
 			centerMenu.getChildren().addAll(r, a, TextBox, doWork, r2, b, OutputTextBox, r3);
 		});
 		
-		Button button3 = new Button("Key Management");
+		ImageView KeyManagementImageView = new ImageView();
+		Image KeyManagementImage = new Image(MainPart.class.getResourceAsStream("keysIcon.png"));
+		KeyManagementImageView.setImage(KeyManagementImage);
+		KeyManagementImageView.setFitHeight(30);
+		KeyManagementImageView.setFitWidth(30);
+		Button button3 = new Button("Key Management", KeyManagementImageView);
 		button3.setMinSize(260, 81.9);
 		button3.setOnAction(e -> {
 			centerMenu.getChildren().clear();
@@ -167,7 +183,12 @@ public class MainPart extends Worker{
 			centerMenu.getChildren().addAll(a, OutputTextBox, buttonOne, buttonTwo, buttonThree);
 		});
 		
-		Button button4 = new Button("Options");
+		ImageView OptionsImageView = new ImageView();
+		Image OptionsImage = new Image(MainPart.class.getResourceAsStream("gearIcon.png"));
+		OptionsImageView.setImage(OptionsImage);
+		OptionsImageView.setFitHeight(30);
+		OptionsImageView.setFitWidth(30);
+		Button button4 = new Button("Options", OptionsImageView);
 		button4.setMinSize(260, 81.9);
 		button4.setOnAction(e -> {
 			centerMenu.getChildren().clear();
@@ -204,7 +225,7 @@ public class MainPart extends Worker{
 			window.close();
 		});
 		
-		leftMenu.getChildren().addAll(selectedImage, button1, button2, button3, button4, button5, button6);
+		leftMenu.getChildren().addAll(logoImageView, button1, button2, button3, button4, button5, button6);
 		
 		BorderPane borderPane = new BorderPane();
 		borderPane.setCenter(centerMenu);
