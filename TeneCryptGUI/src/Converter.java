@@ -1,10 +1,7 @@
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-//import java.io.FileNotFoundException;
 import java.security.SecureRandom;
-import java.util.Scanner;
 import java.math.BigInteger;
 
 public class Converter{
@@ -13,15 +10,9 @@ public class Converter{
 	public static String Activate(String toConvert) throws IOException{		
 		SecureRandom generator = new SecureRandom();
 		int RandomNumber = generator.nextInt(2) + 1;
-		
-		String FP = "Data\\Config.shde";
-		File FF = new File(FP);
-		Scanner FileGuts = new Scanner(FF);
-		String WorkspaceFileName = null;
-		int WantedLineCount = 1;
-		for(int LineCount = 0;!(WantedLineCount==LineCount);LineCount++){
-			WorkspaceFileName = FileGuts.nextLine() + ".shde";
-		}
+				
+		int lineNumber = 1;
+		String WorkspaceFileName = ReturnFileName.Activate(lineNumber);
 		WorkspaceFileName = "Temp\\" + WorkspaceFileName;
 		
 		FileWriter fw = new FileWriter(WorkspaceFileName);
@@ -914,7 +905,6 @@ public class Converter{
 		output.print(RandomNumber);
 		output.print(RandomNumber);
 		fw.close();
-		FileGuts.close();
 		return "";
 	}
 }

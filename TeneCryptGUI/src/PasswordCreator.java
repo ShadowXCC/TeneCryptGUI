@@ -3,24 +3,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.SecureRandom;
-import java.util.Scanner;
 
 public class PasswordCreator {
 	PasswordCreator(){	}
 	public static String Activate() throws IOException{
 		String finalPassword = "";
-		
-		String FP = "Data\\\\Config.shde";
-		File FF = new File(FP);
-		Scanner FileGuts = new Scanner(FF);
-		
-		String PassFilePath = null;
-		int WantedLineCount = 3;
-		for(int LineCount = 0;!(WantedLineCount==LineCount);LineCount++){
-			PassFilePath = FileGuts.nextLine() + ".shde";
-		}
+				
+		int lineNumber = 3;
+		String PassFilePath = ReturnFileName.Activate(lineNumber);
 		PassFilePath = "Data\\" + PassFilePath;
 		File PassFile = new File(PassFilePath);
+		
 		if(!PassFile.exists()){
 			FileWriter fw = new FileWriter(PassFile);
 			SecureRandom PassGenerator = new SecureRandom();
@@ -218,7 +211,6 @@ public class PasswordCreator {
 			output.println(hasher.Activate(finalPassword));
 			output.close();
 		}
-		FileGuts.close();
 		return finalPassword;
 	}
 }

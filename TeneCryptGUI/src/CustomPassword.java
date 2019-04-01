@@ -33,11 +33,8 @@ public class CustomPassword extends Worker{
 		File FF = new File(FP);
 		Scanner FileGuts = new Scanner(FF);
 		
-		String PassFilePath = null;
-		int WantedLineCount = 3;
-		for(int LineCount = 0;!(WantedLineCount==LineCount);LineCount++){
-			PassFilePath = FileGuts.nextLine() + ".shde";
-		}
+		int lineNumber = 3;
+		String PassFilePath = ReturnFileName.Activate(lineNumber);
 		PassFilePath = "Data\\" + PassFilePath;
 		
 		Scanner sf1 = new Scanner(new File(PassFilePath));

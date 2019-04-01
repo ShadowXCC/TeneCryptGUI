@@ -22,15 +22,11 @@ public class PasswordChecker {
 	public static Boolean Activate(String InputPass) throws FileNotFoundException{
 		InputPass = hasher.Activate(InputPass);
 		boolean check = false;
-		String FP = "Data\\Config.shde";
-		Scanner FileGuts = new Scanner(new File(FP));
-		
-		String PassFilePath = "";
-		int WantedLineCount = 3;
-		for(int LineCount = 0;!(WantedLineCount==LineCount);LineCount++){
-			PassFilePath = FileGuts.nextLine() + ".shde";
-		}
+
+		int lineNumber = 3;
+		String PassFilePath = ReturnFileName.Activate(lineNumber);
 		PassFilePath = "Data\\"+ PassFilePath;
+		
 		Scanner sf1 = new Scanner(new File(PassFilePath));
 		String Pass = sf1.nextLine();
 		
@@ -93,7 +89,7 @@ public class PasswordChecker {
 			}
 		}
 		sf1.close();
-		FileGuts.close();
+		//FileGuts.close();
 		return check;
 	}
 }

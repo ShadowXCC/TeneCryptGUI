@@ -3,28 +3,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.SecureRandom;
-import java.util.Scanner;
 
 public class PPKeyCreator {
 	PPKeyCreator(){	}
 	public static String Activate() throws IOException{
 		//Public
-		String FP = "Data\\Config.shde";
-		File FF = new File(FP);
-		Scanner FileGuts = new Scanner(FF);
-		Scanner FileGuts2 = new Scanner(FF);
 		
-		String PublicFileName = "";
-		String PrivateFileName = "";
-		int WantedLineCount = 6;
-		int WantedLineCount1 = 7;
-		for(int LineCount = 0;!(WantedLineCount == LineCount);LineCount++){
-			PublicFileName = FileGuts.nextLine() + ".shde";
-		}
+		int lineNumber = 6;
+		String PublicFileName = ReturnFileName.Activate(lineNumber);
 		PublicFileName = "Data\\" + PublicFileName;
-		for(int LineCount1 = 0;!(WantedLineCount1 == LineCount1);LineCount1++){
-			PrivateFileName = FileGuts2.nextLine() + ".shde";
-		}
+		
+		int lineNumber1 = 7;
+		String PrivateFileName = ReturnFileName.Activate(lineNumber1);
 		PrivateFileName = "Data\\" + PrivateFileName;
 		
 		String pubKey = "";
@@ -487,8 +477,6 @@ public class PPKeyCreator {
 			}
 			output1.close();
 		}
-		FileGuts.close();
-		FileGuts2.close();
 		return pubKey;
 	}
 }

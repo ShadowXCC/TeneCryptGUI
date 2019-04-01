@@ -15,15 +15,10 @@ public class Encrypter {
 		
 		Calendar cal = Calendar.getInstance();
 		
-		String FP = "Data\\Config.shde";
-		File FF = new File(FP);
-		Scanner FileGuts = new Scanner(FF);
-		String WorkspaceFileName = null;
-		int WantedLineCount = 1;
-		for(int LineCount = 0;!(WantedLineCount==LineCount);LineCount++){
-			WorkspaceFileName = FileGuts.nextLine() + ".shde";
-		}
+		int lineNumber = 1;
+		String WorkspaceFileName = ReturnFileName.Activate(lineNumber);
 		WorkspaceFileName = "Temp\\" + WorkspaceFileName;
+		
 		int Second = cal.get(Calendar.SECOND) + 10;
 		BigInteger SecondNum = new BigInteger(Integer.toString(Second));
 		
@@ -52,7 +47,6 @@ public class Encrypter {
 		BigInteger toHex=new BigInteger(finallyDone, 10);
 		String hexValue = toHex.toString(16);*/
 		
-		FileGuts.close();
 		return finallyDone;
 	}
 }
