@@ -23,17 +23,6 @@ public class ConfigMaker {
 			FileWriter fw = new FileWriter(FileName);
 			PrintWriter output = new PrintWriter(fw);
 			for(int b = 1; b <= NumOfFiles; b++){
-				
-				String os = System.getProperty("os.name").toLowerCase();
-				if(os.contains("mac")){
-					//output.print(".");
-				}
-				if(os.contains("linux")){
-					//output.print(".");
-				}
-				if(os.contains("windows")){
-					//File.setAttribute(FileName, "dos:hidden", true);
-				}
 				for(int a = 0;a < NameLength; a++){
 					int g = G.nextInt(62);
 					if(g == 00){
