@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class CustomPassword extends Worker{
+public class CustomPassword {
 	private static double passwordXOffset = 0;
 	private	static double passwordYOffset = 0;
 	
