@@ -1,8 +1,7 @@
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Optional;
 import java.util.Scanner;
-
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -19,7 +18,7 @@ public class PasswordChecker {
 	
 	static int passwordTriesLeft = 3;	
 	
-	public static Boolean Activate(String InputPass) throws FileNotFoundException{
+	public static Boolean Activate(String InputPass) throws IOException{
 		InputPass = hasher.Activate(InputPass);
 		boolean check = false;
 
@@ -38,6 +37,7 @@ public class PasswordChecker {
 		}
 		if(passwordTriesLeft == 1) {
 			alertMessage = "No Attempts Remaining, Closing Program.";
+			FailedLoginFileCreator.Activate();
 		}
 		
         Alert passwordTriesLeftAlert = new Alert(AlertType.NONE, alertMessage, ButtonType.CLOSE);

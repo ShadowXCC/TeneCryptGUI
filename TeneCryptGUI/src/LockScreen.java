@@ -1,4 +1,6 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -53,6 +55,8 @@ public class LockScreen extends Worker{
 					}
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
 			}
 		}); 
@@ -77,6 +81,8 @@ public class LockScreen extends Worker{
 					describer.setText("Incorrect Password, " + message);
 				}
 			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		});
