@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -36,7 +37,11 @@ public class FailedLoginAlert {
 			
 			Scene FailedLoginAlertScene = FailedLoginAlert.getDialogPane().getScene();
 			Stage FailedLoginAlertStage = (Stage) FailedLoginAlert.getDialogPane().getScene().getWindow();
-			FailedLoginAlert.setGraphic(new ImageView(FailedLoginAlert.class.getResource("incorrectPasswordIcon.png").toString()));
+			ImageView FailedLoginIconImageView = new ImageView(FailedLoginAlert.class.getResource("incorrectPasswordIcon.png").toString());
+			FailedLoginIconImageView.setFitHeight(90);
+			FailedLoginIconImageView.setFitWidth(90);
+			FailedLoginAlert.setGraphic(FailedLoginIconImageView);
+			
 			FailedLoginAlertScene.getStylesheets().add("style.css");
 			FailedLoginAlertStage.initStyle(StageStyle.UNDECORATED);
 			FailedLoginAlertScene.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -54,7 +59,10 @@ public class FailedLoginAlert {
 			
 			FailedLoginAlert.showAndWait();
 			FileGuts.close();
+			
+			file.delete();
 		}
+		
 		
 		return "";
 	}

@@ -20,6 +20,7 @@ public class MainPart extends Worker{
 	private	static double yOffset = 0;
 	
 	public static Scene Activate() throws FileNotFoundException{
+		FailedLoginAlert.Activate();
 		window.setTitle("Title");
 		
 		VBox centerMenu = new VBox();
