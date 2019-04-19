@@ -46,6 +46,7 @@
 
 .Setup *.text{
     -fx-text-alignment: center;
+    -fx-background-color: #ff9966;
 }
 
 .text-area .content{
@@ -64,4 +65,8 @@
 .dialog-pane {
 	-fx-border-color: #e5e5e5;
     -fx-background-color: #191919;
+}
+
+.initialSetupTextBox {
+	-fx-background-color: #ff9966;
 }

@@ -1,6 +1,5 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -38,6 +37,7 @@ public class InitialSetup extends Worker{
 		VBox centerMenu = new VBox();
 		Label describer = new Label();
 		Label spacer = new Label();
+		Label spacer2 = new Label();
 		TextArea TextBox = new TextArea();//Place to input CDKey, definitely needs work
 		TextBox.getStyleClass().add("Setup");
 		TextBox.setMaxWidth(416);
@@ -69,6 +69,7 @@ public class InitialSetup extends Worker{
 			String password = PasswordCreator.Activate();//Returns the default password from PasswordCreator
 			TextBox.setEditable(false);
 			TextBox.setText(password);
+			TextBox.getStyleClass().add("initialSetupTextBox");
 			Stepper.setOnAction(event -> {
 				//Display Public Key
 				describer.setText("Your Public Key is:");
@@ -98,7 +99,7 @@ public class InitialSetup extends Worker{
 			TextBox.setText("");
 		}
 		
-		centerMenu.getChildren().addAll(describer, spacer, TextBox, Stepper);
+		centerMenu.getChildren().addAll(describer, spacer, TextBox, spacer2, Stepper);
 		centerMenu.setAlignment(Pos.CENTER);
 		
 		BorderPane borderPane = new BorderPane();
