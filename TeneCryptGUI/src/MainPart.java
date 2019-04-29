@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
@@ -180,8 +181,11 @@ public class MainPart extends Worker{
 				//New window that prompts for key line number and then deletes it and removes the empty line
 				//This might not be directly possible or reasonable
 			});
+			HBox keyManagementButtons = new HBox();
+			keyManagementButtons.setAlignment(Pos.CENTER);
+			keyManagementButtons.getChildren().addAll(buttonOne, buttonTwo, buttonThree);
 			
-			centerMenu.getChildren().addAll(a, OutputTextBox, buttonOne, buttonTwo, buttonThree);
+			centerMenu.getChildren().addAll(r, a, OutputTextBox, r2, keyManagementButtons, r3);
 		});
 		
 		ImageView OptionsImageView = new ImageView();
