@@ -75,12 +75,14 @@ public class InitialSetup extends Worker{
 				describer.setText("Your Public Key is:");
 				String ppKey = null;
 				try {
-					ppKey = PPKeyCreator.Activate();
+					ppKey = PPKeyCreator.Activate(); //Gets key
+					ppKey = formatKey.Activate(ppKey); // Formats key
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 				TextBox.setWrapText(true);
 				TextBox.setMaxHeight(175.5);
+				TextBox.setMaxWidth(350);
 				TextBox.setEditable(false);
 				TextBox.setText(ppKey);
 				Stepper.setOnAction(event1 -> {
