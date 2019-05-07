@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -21,6 +23,9 @@ public class MainPart extends Worker{
 	private	static double yOffset = 0;
 	
 	public static Scene Activate() throws FileNotFoundException{
+		Clipboard clipboard = Clipboard.getSystemClipboard();
+		final ClipboardContent content = new ClipboardContent();
+		
 		FailedLoginAlert.Activate();
 		window.setTitle("Title");
 		
@@ -96,7 +101,18 @@ public class MainPart extends Worker{
 				OutputTextBox.selectAll();
 			});
 			
-			centerMenu.getChildren().addAll(r, a, TextBox, doWork, r2, b, OutputTextBox, r3);
+			Button copyTextAreaButton = new Button("Copy");
+			copyTextAreaButton.setOnAction(e1 -> {
+				content.putString(OutputTextBox.getText());
+				clipboard.setContent(content);
+			});
+			
+			HBox encryptButtons = new HBox();
+			encryptButtons.setAlignment(Pos.CENTER);
+			
+			encryptButtons.getChildren().addAll(doWork, copyTextAreaButton);
+			
+			centerMenu.getChildren().addAll(r, a, TextBox, encryptButtons, r2, b, OutputTextBox, r3);
 		});
 		
 		ImageView DecryptImageView = new ImageView();
@@ -145,7 +161,18 @@ public class MainPart extends Worker{
 				OutputTextBox.selectAll();
 			});
 			
-			centerMenu.getChildren().addAll(r, a, TextBox, doWork, r2, b, OutputTextBox, r3);
+			Button copyTextAreaButton = new Button("Copy");
+			copyTextAreaButton.setOnAction(e1 -> {
+				content.putString(OutputTextBox.getText());
+				clipboard.setContent(content);
+			});
+			
+			HBox decryptButtons = new HBox();
+			decryptButtons.setAlignment(Pos.CENTER);
+			
+			decryptButtons.getChildren().addAll(doWork, copyTextAreaButton);
+			
+			centerMenu.getChildren().addAll(r, a, TextBox, decryptButtons, r2, b, OutputTextBox, r3);
 		});
 		
 		ImageView KeyManagementImageView = new ImageView();

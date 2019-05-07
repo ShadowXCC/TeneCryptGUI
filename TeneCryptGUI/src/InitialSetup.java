@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -20,6 +22,9 @@ public class InitialSetup extends Worker{
 	private static double xOffset = 0;
 	private	static double yOffset = 0;
 	public static Scene Activate() throws IOException{
+		Clipboard clipboard = Clipboard.getSystemClipboard();
+		final ClipboardContent content = new ClipboardContent();
+		
 		window.setTitle("TeneCrypt - Setup");
 		
 		Region left = new Region();
@@ -43,6 +48,11 @@ public class InitialSetup extends Worker{
 		TextBox.setMaxWidth(416);
 		TextBox.setMaxHeight(87.75);
 		Button Stepper = new Button("Next");
+		Button copyTextAreaButton = new Button("Copy");
+		copyTextAreaButton.setOnAction(e1 -> {
+			//content.putString(OutputTextBox.getText());
+			clipboard.setContent(content);
+		});
 	
 		//Folder Architecture Maker
 		FolderArchitectureMaker.Activate();
@@ -70,7 +80,16 @@ public class InitialSetup extends Worker{
 			TextBox.setEditable(false);
 			TextBox.setText(password);
 			TextBox.getStyleClass().add("initialSetupTextBox");
+			
+			HBox buttons = new HBox();
+			buttons.setAlignment(Pos.CENTER);
+			
+			buttons.getChildren().addAll(Stepper, copyTextAreaButton);
+			
+			centerMenu.getChildren().addAll(describer, spacer, TextBox, spacer2, buttons);
 			Stepper.setOnAction(event -> {
+				buttons.getChildren().remove(copyTextAreaButton);
+				
 				//Display Public Key
 				describer.setText("Your Public Key is:");
 				String ppKey = null;
@@ -101,7 +120,6 @@ public class InitialSetup extends Worker{
 			TextBox.setText("");
 		}
 		
-		centerMenu.getChildren().addAll(describer, spacer, TextBox, spacer2, Stepper);
 		centerMenu.setAlignment(Pos.CENTER);
 		
 		BorderPane borderPane = new BorderPane();
