@@ -50,10 +50,13 @@ public class InitialSetup extends Worker{
 		Button Stepper = new Button("Next");
 		Button copyTextAreaButton = new Button("Copy");
 		copyTextAreaButton.setOnAction(e1 -> {
-			//content.putString(OutputTextBox.getText());
+			content.putString(TextBox.getText());
 			clipboard.setContent(content);
 		});
-	
+		
+		TextBox.setOnMouseClicked(e1 -> {
+			TextBox.selectAll();
+		});
 		//Folder Architecture Maker
 		FolderArchitectureMaker.Activate();
 		
