@@ -233,8 +233,24 @@ public class MainPart extends Worker{
 					
 				}
 			});
+			buttonTwo.setText("2");
+			buttonThree.setText("3");
 			
-			centerMenu.getChildren().addAll(a, buttonOne);
+			VBox leftOptionsButtons = new VBox();
+			leftOptionsButtons.setAlignment(Pos.CENTER);
+			
+			leftOptionsButtons.getChildren().addAll(buttonOne, buttonTwo);
+			
+			VBox rightOptionsButtons = new VBox();
+			rightOptionsButtons.setAlignment(Pos.CENTER);
+
+			rightOptionsButtons.getChildren().addAll(buttonThree);
+			
+			BorderPane allOptionsButtons = new BorderPane();
+			allOptionsButtons.setLeft(leftOptionsButtons);
+			allOptionsButtons.setRight(rightOptionsButtons);
+			
+			centerMenu.getChildren().addAll(b, a, r, allOptionsButtons, r2);
 		});
 		
 		Button button5 = new Button("Lock");
@@ -270,14 +286,14 @@ public class MainPart extends Worker{
 	            yOffset = event.getSceneY();
 	        }
 	    });
-
+		
 		borderPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
 	        public void handle(MouseEvent event) {
 	            window.setX(event.getScreenX() - xOffset);
 	            window.setY(event.getScreenY() - yOffset);
 	        }
 	    });
-				
+		
 		return scene;
 	}
 }
