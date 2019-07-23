@@ -188,6 +188,13 @@ public class MainPart extends Worker{
 			OutputTextBox.setText("");
 			
 			a.setText("Stored Keys");
+			
+			try {
+				OutputTextBox.setText(returnKeys.Activate());
+			} catch (FileNotFoundException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
 			OutputTextBox.setMinWidth(676);
 			OutputTextBox.setMaxWidth(676);
 			OutputTextBox.setMinHeight(438.75);
