@@ -161,16 +161,20 @@ public class MainPart extends Worker{
 				OutputTextBox.selectAll();
 			});
 			
-			Button copyTextAreaButton = new Button("Copy");
-			copyTextAreaButton.setOnAction(e1 -> {
-				content.putString(OutputTextBox.getText());
-				clipboard.setContent(content);
+			Button pasteTextAreaButton = new Button("Paste");
+			pasteTextAreaButton.setOnAction(e1 -> {
+				content.putString(clipboard.getString());
+				
+				String toPaste = content.toString();
+				int toPasteLength = toPaste.length();
+				toPaste = toPaste.substring(14, toPasteLength - 1);
+				TextBox.setText(toPaste);
 			});
 			
 			HBox decryptButtons = new HBox();
 			decryptButtons.setAlignment(Pos.CENTER);
 			
-			decryptButtons.getChildren().addAll(doWork, copyTextAreaButton);
+			decryptButtons.getChildren().addAll(doWork, pasteTextAreaButton);
 			
 			centerMenu.getChildren().addAll(r, a, TextBox, decryptButtons, r2, b, OutputTextBox, r3);
 		});
@@ -192,7 +196,6 @@ public class MainPart extends Worker{
 			try {
 				OutputTextBox.setText(returnKeys.Activate());
 			} catch (FileNotFoundException e2) {
-				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			}
 			OutputTextBox.setMinWidth(676);
