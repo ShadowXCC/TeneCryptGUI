@@ -107,10 +107,16 @@ public class MainPart extends Worker{
 				clipboard.setContent(content);
 			});
 			
+			Button clearTextAreaButton = new Button("Clear");
+			clearTextAreaButton.setOnAction(e1 -> {
+				OutputTextBox.clear();
+				TextBox.clear();
+			});
+			
 			HBox encryptButtons = new HBox();
 			encryptButtons.setAlignment(Pos.CENTER);
 			
-			encryptButtons.getChildren().addAll(doWork, copyTextAreaButton);
+			encryptButtons.getChildren().addAll(doWork, copyTextAreaButton, clearTextAreaButton);
 			
 			centerMenu.getChildren().addAll(r, a, TextBox, encryptButtons, r2, b, OutputTextBox, r3);
 		});
@@ -171,10 +177,16 @@ public class MainPart extends Worker{
 				TextBox.setText(toPaste);
 			});
 			
+			Button clearTextAreaButton = new Button("Clear");
+			clearTextAreaButton.setOnAction(e1 -> {
+				OutputTextBox.clear();
+				TextBox.clear();
+			});
+			
 			HBox decryptButtons = new HBox();
 			decryptButtons.setAlignment(Pos.CENTER);
 			
-			decryptButtons.getChildren().addAll(doWork, pasteTextAreaButton);
+			decryptButtons.getChildren().addAll(doWork, pasteTextAreaButton, clearTextAreaButton);
 			
 			centerMenu.getChildren().addAll(r, a, TextBox, decryptButtons, r2, b, OutputTextBox, r3);
 		});
