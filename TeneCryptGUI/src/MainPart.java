@@ -220,15 +220,16 @@ public class MainPart extends Worker{
 			buttonThree.setText("Remove");
 			buttonOne.setOnAction(e1 -> {
 				//New window that prompts for name and key, then passes those to AddKey.Activate()
+				addKeyPopUp.Activate();
 			});
 			buttonTwo.setOnAction(e1 -> {
 				//New window that prompts for key line number, then provides editable textboxes that already contain the name and key, then outputs whatever
 				//is left in the textboxes to that line
-				//This might not be directly possible or reasonable
+				editKeyPopUp.Activate();
 			});
 			buttonThree.setOnAction(e1 -> {
 				//New window that prompts for key line number and then deletes it and removes the empty line
-				//This might not be directly possible or reasonable
+				deleteKeyPopUp.Activate();
 			});
 			HBox keyManagementButtons = new HBox();
 			keyManagementButtons.setAlignment(Pos.CENTER);
