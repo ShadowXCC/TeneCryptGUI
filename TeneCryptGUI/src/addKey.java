@@ -18,6 +18,8 @@ public class addKey {
 			FilePath = FileGuts.nextLine() + ".shde";
 		}
 		FilePath = "Data\\" + FilePath;
+		FileGuts.close();
+		
 		File AllKeyFile = new File(FilePath);
 
 		String FormattedOutput = name + " - " + key;
@@ -26,7 +28,6 @@ public class addKey {
 		output.println(FormattedOutput);
 		output.close();
 		
-		FileGuts.close();
 		String Activator = "";
 		return Activator;
 	}

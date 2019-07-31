@@ -19,6 +19,9 @@ public class editKey {
 			FilePath = FileGuts.nextLine() + ".shde";
 		}
 		FilePath = "Data\\" + FilePath;
+		FileGuts.close();
+
+		
 		File AllKeyFile = new File(FilePath);
 		Scanner FileGuts2 = new Scanner(AllKeyFile);
 
@@ -26,6 +29,7 @@ public class editKey {
 		while(FileGuts2.hasNextLine()) {
 			holder.add(FileGuts2.nextLine());
 		}
+		FileGuts2.close();
 		
 		holder.set(lineNumber - 1, name + " - " + key);
 		
@@ -35,8 +39,6 @@ public class editKey {
 		}
 		output.close();
 		
-		FileGuts.close();
-		FileGuts2.close();
 		String Activator = "";
 		return Activator;
 	}

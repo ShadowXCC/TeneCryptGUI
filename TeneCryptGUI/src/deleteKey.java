@@ -19,6 +19,8 @@ public class deleteKey {
 			FilePath = FileGuts.nextLine() + ".shde";
 		}
 		FilePath = "Data\\" + FilePath;
+		FileGuts.close();
+		
 		File AllKeyFile = new File(FilePath);
 		Scanner FileGuts2 = new Scanner(AllKeyFile);
 		
@@ -26,6 +28,7 @@ public class deleteKey {
 		while(FileGuts2.hasNextLine()) {
 			holder.add(FileGuts2.nextLine());
 		}
+		FileGuts2.close();
 		
 		holder.remove(lineNumber - 1);
 		
@@ -35,8 +38,6 @@ public class deleteKey {
 		}
 		output.close();
 		
-		FileGuts.close();
-		FileGuts2.close();
 		String Activator = "";
 		return Activator;
 	}
