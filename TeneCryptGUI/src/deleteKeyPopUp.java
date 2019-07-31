@@ -54,7 +54,6 @@ public class deleteKeyPopUp {
 		window.setScene(scene);
 		window.show();
 		
-		
 		String toReturn = "";
 		return toReturn;
 	}
