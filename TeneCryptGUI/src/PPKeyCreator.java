@@ -284,198 +284,198 @@ public class PPKeyCreator {
 		SecureRandom Generator1 = new SecureRandom();
 		File PrivateFile = new File(PublicFileName);
 		if(!PrivateFile.exists()){
-			FileWriter fw1 = new FileWriter(PrivateFileName);
-			PrintWriter output1 = new PrintWriter(fw1);
+			FileWriter fw = new FileWriter(PrivateFileName);
+			PrintWriter output = new PrintWriter(fw);
 			for(int b = 1; b <= PriLength; b++){
 				int g = Generator1.nextInt(62);
 				if(g == 00){
-					output1.print("A");
+					output.print("A");
 				}
 				if(g == 1){
-					output1.print("B");
+					output.print("B");
 				}
 				if(g == 2){
-					output1.print("C");
+					output.print("C");
 				}
 				if(g == 3){
-					output1.print("D");
+					output.print("D");
 				}
 				if(g == 4){
-					output1.print("E");
+					output.print("E");
 				}
 				if(g == 5){
-					output1.print("F");
+					output.print("F");
 				}
 				if(g == 6){
-					output1.print("G");
+					output.print("G");
 				}
 				if(g == 7){
-					output1.print("H");
+					output.print("H");
 				}
 				if(g == 8){
-					output1.print("I");
+					output.print("I");
 				}
 				if(g == 9){
-					output1.print("J");
+					output.print("J");
 				}
 				if(g == 10){
-					output1.print("K");
+					output.print("K");
 				}
 				if(g == 11){
-					output1.print("L");
+					output.print("L");
 				}
 				if(g == 12){
-					output1.print("M");
+					output.print("M");
 				}
 				if(g == 13){
-					output1.print("N");
+					output.print("N");
 				}
 				if(g == 14){
-					output1.print("O");
+					output.print("O");
 				}
 				if(g == 15){
-					output1.print("P");
+					output.print("P");
 				}
 				if(g == 16){
-					output1.print("Q");
+					output.print("Q");
 				}
 				if(g == 17){
-					output1.print("R");
+					output.print("R");
 				}
 				if(g == 18){
-					output1.print("S");
+					output.print("S");
 				}
 				if(g == 19){
-					output1.print("T");
+					output.print("T");
 				}
 				if(g == 20){
-					output1.print("U");
+					output.print("U");
 				}
 				if(g == 21){
-					output1.print("V");
+					output.print("V");
 				}
 				if(g == 22){
-					output1.print("W");
+					output.print("W");
 				}
 				if(g == 23){
-					output1.print("X");
+					output.print("X");
 				}
 				if(g == 24){
-					output1.print("Y");
+					output.print("Y");
 				}
 				if(g == 25){
-					output1.print("Z");
+					output.print("Z");
 				}
 				if(g == 26){
-					output1.print("a");
+					output.print("a");
 				}
 				if(g == 27){
-					output1.print("b");
+					output.print("b");
 				}
 				if(g == 28){
-					output1.print("c");
+					output.print("c");
 				}
 				if(g == 29){
-					output1.print("d");
+					output.print("d");
 				}
 				if(g == 30){
-					output1.print("e");
+					output.print("e");
 				}
 				if(g == 31){
-					output1.print("f");
+					output.print("f");
 				}
 				if(g == 32){
-					output1.print("g");
+					output.print("g");
 				}
 				if(g == 33){
-					output1.print("h");
+					output.print("h");
 				}
 				if(g == 34){
-					output1.print("i");
+					output.print("i");
 				}
 				if(g == 35){
-					output1.print("j");
+					output.print("j");
 				}
 				if(g == 36){
-					output1.print("k");
+					output.print("k");
 				}
 				if(g == 37){
-					output1.print("l");
+					output.print("l");
 				}
 				if(g == 38){
-					output1.print("m");
+					output.print("m");
 				}
 				if(g == 39){
-					output1.print("n");
+					output.print("n");
 				}
 				if(g == 40){
-					output1.print("o");
+					output.print("o");
 				}
 				if(g == 41){
-					output1.print("p");
+					output.print("p");
 				}
 				if(g == 42){
-					output1.print("q");
+					output.print("q");
 				}
 				if(g == 43){
-					output1.print("r");
+					output.print("r");
 				}
 				if(g == 44){
-					output1.print("s");
+					output.print("s");
 				}
 				if(g == 45){
-					output1.print("t");
+					output.print("t");
 				}
 				if(g == 46){
-					output1.print("u");
+					output.print("u");
 				}
 				if(g == 47){
-					output1.print("v");
+					output.print("v");
 				}
 				if(g == 48){
-					output1.print("w");
+					output.print("w");
 				}
 				if(g == 49){
-					output1.print("x");
+					output.print("x");
 				}
 				if(g == 50){
-					output1.print("y");
+					output.print("y");
 				}
 				if(g == 51){
-					output1.print("z");
+					output.print("z");
 				}
 				if(g == 52){
-					output1.print("1");
+					output.print("1");
 				}
 				if(g == 53){
-					output1.print("2");
+					output.print("2");
 				}
 				if(g == 54){
-					output1.print("3");
+					output.print("3");
 				}
 				if(g == 55){
-					output1.print("4");
+					output.print("4");
 				}
 				if(g == 56){
-					output1.print("5");
+					output.print("5");
 				}
 				if(g == 57){
-					output1.print("6");
+					output.print("6");
 				}
 				if(g == 58){
-					output1.print("7");
+					output.print("7");
 				}
 				if(g == 59){
-					output1.print("8");
+					output.print("8");
 				}
 				if(g == 60){
-					output1.print("9");
+					output.print("9");
 				}
 				if(g == 61){
-					output1.print("0");
+					output.print("0");
 				}
 			}
-			output1.close();
+			output.close();
 		}
 		return pubKey;
 	}
