@@ -26,8 +26,8 @@ public class PasswordChecker {
 		String PassFilePath = ReturnFileName.Activate(lineNumber);
 		PassFilePath = "Data\\"+ PassFilePath;
 		
-		Scanner sf1 = new Scanner(new File(PassFilePath));
-		String Pass = sf1.nextLine();
+		Scanner sf = new Scanner(new File(PassFilePath));
+		String Pass = sf.nextLine();
 		
 		ButtonType fullCloseButton = new ButtonType("Close");
 		
@@ -88,7 +88,7 @@ public class PasswordChecker {
 				}
 			}
 		}
-		sf1.close();
+		sf.close();
 		//FileGuts.close();
 		return check;
 	}
