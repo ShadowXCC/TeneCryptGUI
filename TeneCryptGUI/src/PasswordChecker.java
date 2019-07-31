@@ -89,7 +89,6 @@ public class PasswordChecker {
 			}
 		}
 		sf.close();
-		//FileGuts.close();
 		return check;
 	}
 }
