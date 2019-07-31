@@ -74,7 +74,6 @@ public class editKeyPopUp {
 		window.setScene(scene);
 		window.show();
 		
-		
 		String toReturn = "";
 		return toReturn;
 	}
