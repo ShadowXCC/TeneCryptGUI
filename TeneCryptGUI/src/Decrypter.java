@@ -11,12 +11,7 @@ public class Decrypter {
 		// VARIABLE AREA END
 		
 		String decrypted = "";
-		
-		//toDecrypt used to be Hex	//toDecrypt is Hex
-		/*BigInteger toDec = new BigInteger(toDecrypt, 16);
-		String hexValue = toDec.toString(10);
-		
-		String OriginalToDecrypt = hexValue;*/
+
 		String OriginalToDecrypt = toDecrypt;
 		
 		BigInteger OriginalToDecryptNum = new BigInteger(OriginalToDecrypt.substring(2));
