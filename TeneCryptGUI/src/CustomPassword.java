@@ -112,25 +112,6 @@ public class CustomPassword {
 	        }
 	    });
 		
-		/*String passwordConfirmationAlertMessage = "";
-		ButtonType yesButton = new ButtonType("Yes");
-		ButtonType noButton = new ButtonType("No");
-		
-		Alert passwordConfirmationAlert = new Alert(null);
-		Scene passwordConfirmationScene = passwordConfirmationAlert.getDialogPane().getScene();
-		Stage passwordConfirmationStage = (Stage) passwordConfirmationAlert.getDialogPane().getScene().getWindow();
-		passwordConfirmationScene.setOnMousePressed(new EventHandler<MouseEvent>() {
-	        public void handle(MouseEvent event) {
-	        	confirmationXOffset = event.getSceneX();
-	        	confirmationYOffset = event.getSceneY();
-	        }
-	    });
-		passwordConfirmationScene.setOnMouseDragged(new EventHandler<MouseEvent>() {
-	        public void handle(MouseEvent event) {
-	        	passwordConfirmationStage.setX(event.getScreenX() - confirmationXOffset);
-	        	passwordConfirmationStage.setY(event.getScreenY() - confirmationYOffset);
-	        }
-	    });*/
 		ButtonType yesButton = new ButtonType("Yes");
 		ButtonType noButton = new ButtonType("No");
 		
