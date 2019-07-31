@@ -36,11 +36,11 @@ public class Encrypter {
 		
 		finallyDone = SecondNum + "" + finalfinalnumbers;
 		
-		FileWriter fw2 = new FileWriter(WorkspaceFileName);
-		PrintWriter output2 = new PrintWriter(fw2);
-		output2.print("");
-		fw2.close();
-		output2.close();
+		FileWriter fw = new FileWriter(WorkspaceFileName);
+		PrintWriter output = new PrintWriter(fw);
+		output.print("");
+		fw.close();
+		output.close();
 		
 		/*System.out.println("Before hex: " + finallyDone);
 		
