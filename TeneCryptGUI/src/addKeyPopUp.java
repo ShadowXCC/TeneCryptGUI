@@ -64,7 +64,6 @@ public class addKeyPopUp {
 		window.setScene(scene);
 		window.show();
 		
-		
 		String toReturn = "";
 		return toReturn;
 	}
