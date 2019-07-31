@@ -233,7 +233,11 @@ public class MainPart extends Worker{
 			});
 			HBox keyManagementButtons = new HBox();
 			keyManagementButtons.setAlignment(Pos.CENTER);
-			keyManagementButtons.getChildren().addAll(buttonOne, buttonTwo, buttonThree);
+			
+			Label buttonSpacer = new Label("     ");
+			Label buttonSpacer2 = new Label("     ");
+			
+			keyManagementButtons.getChildren().addAll(buttonOne, buttonSpacer, buttonTwo, buttonSpacer2, buttonThree);
 			
 			centerMenu.getChildren().addAll(r, a, OutputTextBox, r2, keyManagementButtons, r3);
 		});
