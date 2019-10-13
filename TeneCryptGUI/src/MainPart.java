@@ -285,7 +285,12 @@ public class MainPart extends Worker{
 			centerMenu.getChildren().addAll(b, a, r, allOptionsButtons, r2);
 		});
 		
-		Button button5 = new Button("Lock");
+		ImageView LockImageView = new ImageView();
+		Image LockImage = new Image(MainPart.class.getResourceAsStream("lockedIcon.png"));
+		LockImageView.setImage(LockImage);
+		LockImageView.setFitHeight(30);
+		LockImageView.setFitWidth(30);
+		Button button5 = new Button("Lock", LockImageView);
 		button5.setMinSize(260, 81.9);
 		button5.setOnAction(e -> {
 			try {
@@ -299,7 +304,12 @@ public class MainPart extends Worker{
 			}
 		});
 		
-		Button button6 = new Button("Exit");
+		ImageView closeImageView = new ImageView();
+		Image closeImage = new Image(MainPart.class.getResourceAsStream("closeIcon.png"));
+		closeImageView.setImage(closeImage);
+		closeImageView.setFitHeight(30);
+		closeImageView.setFitWidth(30);
+		Button button6 = new Button("Exit", closeImageView);
 		button6.setMinSize(260, 81.0);
 		button6.setOnAction(e -> {
 			window.close();
