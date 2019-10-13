@@ -41,6 +41,9 @@ public class MainPart extends Worker{
 		Button buttonOne = new Button();
 		Button buttonTwo = new Button();
 		Button buttonThree = new Button();
+		Label spacer1 = new Label("   ");
+		Label spacer2 = new Label("   ");
+		Label spacer3 = new Label(" ");
 		Region r = new Region();
 		VBox.setVgrow(r, Priority.ALWAYS);
 		Region r2 = new Region();
@@ -78,6 +81,7 @@ public class MainPart extends Worker{
 			OutputTextBox.setMinHeight(200);
 			OutputTextBox.setMaxHeight(200);
 			
+			doWork.setText("Encrypt");
 			doWork.setOnAction(e1 -> {
 				String toEncrypt = TextBox.getText();
 				try {
@@ -116,9 +120,9 @@ public class MainPart extends Worker{
 			HBox encryptButtons = new HBox();
 			encryptButtons.setAlignment(Pos.CENTER);
 			
-			encryptButtons.getChildren().addAll(doWork, copyTextAreaButton, clearTextAreaButton);
+			encryptButtons.getChildren().addAll(doWork, spacer1, copyTextAreaButton, spacer2, clearTextAreaButton);
 			
-			centerMenu.getChildren().addAll(r, a, TextBox, encryptButtons, r2, b, OutputTextBox, r3);
+			centerMenu.getChildren().addAll(r, a, TextBox, spacer3, encryptButtons, r2, b, OutputTextBox, r3);
 		});
 		
 		ImageView DecryptImageView = new ImageView();
@@ -144,6 +148,7 @@ public class MainPart extends Worker{
 			OutputTextBox.setMinHeight(200);
 			OutputTextBox.setMaxHeight(200);
 			
+			doWork.setText("Decrypt");
 			doWork.setOnAction(e1 -> {
 				String toDecrypt = TextBox.getText();
 				try {
@@ -186,9 +191,9 @@ public class MainPart extends Worker{
 			HBox decryptButtons = new HBox();
 			decryptButtons.setAlignment(Pos.CENTER);
 			
-			decryptButtons.getChildren().addAll(doWork, pasteTextAreaButton, clearTextAreaButton);
+			decryptButtons.getChildren().addAll(doWork, spacer1, pasteTextAreaButton, spacer2, clearTextAreaButton);
 			
-			centerMenu.getChildren().addAll(r, a, TextBox, decryptButtons, r2, b, OutputTextBox, r3);
+			centerMenu.getChildren().addAll(r, a, TextBox, spacer3, decryptButtons, r2, b, OutputTextBox, r3);
 		});
 		
 		ImageView KeyManagementImageView = new ImageView();
