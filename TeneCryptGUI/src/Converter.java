@@ -904,6 +904,7 @@ public class Converter{
 		}
 		output.print(RandomNumber);
 		output.print(RandomNumber);
+		output.close();
 		fw.close();
 		return "";
 	}

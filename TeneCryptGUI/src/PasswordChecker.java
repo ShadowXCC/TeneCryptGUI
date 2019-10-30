@@ -28,6 +28,7 @@ public class PasswordChecker {
 		
 		Scanner sf = new Scanner(new File(PassFilePath));
 		String Pass = sf.nextLine();
+		sf.close();
 		
 		ButtonType fullCloseButton = new ButtonType("Close");
 		
@@ -88,7 +89,6 @@ public class PasswordChecker {
 				}
 			}
 		}
-		sf.close();
 		return check;
 	}
 }

@@ -39,8 +39,8 @@ public class Encrypter {
 		FileWriter fw = new FileWriter(WorkspaceFileName);
 		PrintWriter output = new PrintWriter(fw);
 		output.print("");
-		fw.close();
 		output.close();
+		fw.close();
 		
 		/*System.out.println("Before hex: " + finallyDone);
 		

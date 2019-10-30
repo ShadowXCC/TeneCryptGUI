@@ -28,11 +28,7 @@ public class CustomPassword {
 	private static double confirmationXOffset = 0;
 	private	static double confirmationYOffset = 0;
 	
-	public static String Activate() throws FileNotFoundException{		
-		String FP = "Data\\Config.shde";
-		File FF = new File(FP);
-		Scanner FileGuts = new Scanner(FF);
-		
+	public static String Activate() throws FileNotFoundException{				
 		int lineNumber = 3;
 		String PassFilePath = ReturnFileName.Activate(lineNumber);
 		PassFilePath = "Data\\" + PassFilePath;
@@ -74,7 +70,6 @@ public class CustomPassword {
 				}
 				if(triesLeft == 0){
 					enterPasswordDialog.close();
-					FileGuts.close();
 					sf1.close();
 					return null;
 				}
@@ -83,7 +78,6 @@ public class CustomPassword {
 			else{
 				enterPasswordDialog.close();
 				sf1.close();
-				FileGuts.close();
 				return null;
 			}
 		}
@@ -182,7 +176,6 @@ public class CustomPassword {
 					}
 				}
 				sf1.close();
-				FileGuts.close();
 				return newPassword;
 			}
 			if(option.get() == randomPasswordButton){
@@ -222,7 +215,6 @@ public class CustomPassword {
 						//Do nothing
 					}
 					sf1.close();
-					FileGuts.close();
 					return newPassword;
 				}
 			}

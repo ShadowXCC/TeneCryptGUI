@@ -28,6 +28,7 @@ public class FailedLoginAlert {
 				lineCount += 1;
 				ContentText += FileGuts.nextLine() + "\n";
 			}
+			FileGuts.close();
 			
 			Alert FailedLoginAlert = new Alert(AlertType.WARNING);
 			FailedLoginAlert.setTitle("Failed Login");
@@ -57,7 +58,6 @@ public class FailedLoginAlert {
 		    });
 			
 			FailedLoginAlert.showAndWait();
-			FileGuts.close();
 			
 			file.delete();
 		}
