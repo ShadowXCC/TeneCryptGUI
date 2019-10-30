@@ -30,7 +30,7 @@ public class MainPart extends Worker{
 		window.setTitle("Title");
 		
 		VBox centerMenu = new VBox();
-		Label a = new Label("Please select a menu option");
+		Label a = new Label("Please select a menu option.");
 		Label b = new Label();
 		TextArea TextBox = new TextArea();
 		TextBox.setWrapText(true);
@@ -50,7 +50,12 @@ public class MainPart extends Worker{
 		VBox.setVgrow(r2, Priority.ALWAYS);
 		Region r3 = new Region();
 		VBox.setVgrow(r3, Priority.ALWAYS);
-		centerMenu.getChildren().addAll(a);
+		
+		ImageView bigLogoImageView = new ImageView();
+		Image bigLogo = new Image(MainPart.class.getResourceAsStream("Logo.png"));
+		bigLogoImageView.setImage(bigLogo);
+		
+		centerMenu.getChildren().addAll(bigLogoImageView, a);
 		centerMenu.setAlignment(Pos.CENTER);
 		
 		VBox leftMenu = new VBox();
