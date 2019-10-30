@@ -208,6 +208,10 @@ public class MainPart extends Worker{
 			TextBox.setText("");
 			OutputTextBox.setText("");
 			
+			OutputTextBox.setOnMouseClicked(e1 -> {
+				//OutputTextBox.selectAll();
+			});
+			
 			a.setText("Stored Keys");
 			
 			try {
