@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -16,6 +17,8 @@ public class editKeyPopUp {
 		Main.setAlignment(Pos.CENTER);
 		Scene scene = new Scene(Main, 624, 351);
 		scene.getStylesheets().add("style.css");
+		window.getIcons().add(new Image(editKeyPopUp.class.getResourceAsStream("lockedIcon.png")));
+		window.setTitle("Edit Exisiting Key");
 		
 		Label spacer = new Label();
 		Label spacer2 = new Label();
