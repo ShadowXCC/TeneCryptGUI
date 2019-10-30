@@ -58,7 +58,9 @@ public class addKeyPopUp {
 			window.close();
 		});
 		
-		buttons.getChildren().addAll(submitButton, cancelButton);
+		Label buttonSpacer = new Label("   ");
+		
+		buttons.getChildren().addAll(submitButton, buttonSpacer, cancelButton);
 		
 		Main.getChildren().addAll(spacer, nameStuff, spacer2, keyStuff, spacer3, buttons, spacer4);
 		window.setScene(scene);

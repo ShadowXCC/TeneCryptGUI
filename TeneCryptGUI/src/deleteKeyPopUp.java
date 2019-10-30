@@ -48,7 +48,9 @@ public class deleteKeyPopUp {
 			window.close();
 		});
 		
-		buttons.getChildren().addAll(deleteButton, cancelButton);
+		Label buttonSpacer = new Label("   ");
+		
+		buttons.getChildren().addAll(deleteButton, buttonSpacer, cancelButton);
 		
 		Main.getChildren().addAll(spacer, lineNumberStuff, spacer2, buttons, spacer3);
 		window.setScene(scene);

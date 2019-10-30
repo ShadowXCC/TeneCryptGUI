@@ -68,7 +68,9 @@ public class editKeyPopUp {
 			window.close();
 		});
 		
-		buttons.getChildren().addAll(submitButton, cancelButton);
+		Label buttonSpacer = new Label("   ");
+		
+		buttons.getChildren().addAll(submitButton, buttonSpacer, cancelButton);
 		
 		Main.getChildren().addAll(spacer, lineNumberStuff, spacer2, newNameStuff, spacer3, newKeyStuff, spacer4, buttons, spacer5);
 		window.setScene(scene);
