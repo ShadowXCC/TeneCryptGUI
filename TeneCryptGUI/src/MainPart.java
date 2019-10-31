@@ -185,6 +185,12 @@ public class MainPart extends Worker{
 				int toPasteLength = toPaste.length();
 				toPaste = toPaste.substring(14, toPasteLength - 1);
 				TextBox.setText(toPaste);
+				
+				try {
+					OutputTextBox.setText(decryptLogic.Activate(toPaste));
+				} catch (IOException e2) {
+					e2.printStackTrace();
+				}			
 			});
 			
 			Button clearTextAreaButton = new Button("Clear");
