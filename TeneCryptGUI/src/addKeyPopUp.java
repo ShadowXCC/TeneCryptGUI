@@ -30,6 +30,7 @@ public class addKeyPopUp {
 		Label nameLabel = new Label("Name:   ");
 		TextArea nameTextArea = new TextArea();
 		nameTextArea.setMaxWidth(561.6);
+		nameTextArea.setMaxHeight(75);
 		
 		nameStuff.setAlignment(Pos.CENTER);
 		nameStuff.getChildren().addAll(nameLabel, nameTextArea);

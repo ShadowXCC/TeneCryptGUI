@@ -15,7 +15,7 @@ public class deleteKeyPopUp {
 		Stage window = new Stage();
 		VBox Main = new VBox();
 		Main.setAlignment(Pos.CENTER);
-		Scene scene = new Scene(Main, 624, 351);
+		Scene scene = new Scene(Main, 624, 175.5); //624, 351
 		scene.getStylesheets().add("style.css");
 		window.getIcons().add(new Image(deleteKeyPopUp.class.getResourceAsStream("lockedIcon.png")));
 		window.setTitle("Delete Existing Key");
@@ -23,15 +23,18 @@ public class deleteKeyPopUp {
 		Label spacer = new Label();
 		Label spacer2 = new Label();
 		Label spacer3 = new Label();
+		Label spacer4 = new Label(" ");
 		
 		HBox lineNumberStuff = new HBox();
 		
 		Label lineNumberLabel = new Label("Line Number: ");
 		TextArea lineNumberTextArea = new TextArea();
-		lineNumberTextArea.setMaxWidth(561.6);
+		//lineNumberTextArea.setMaxWidth(561.6);
+		lineNumberTextArea.setMaxWidth(400);
+		lineNumberTextArea.setMaxHeight(75);
 		
 		lineNumberStuff.setAlignment(Pos.CENTER);
-		lineNumberStuff.getChildren().addAll(lineNumberLabel, lineNumberTextArea);
+		lineNumberStuff.getChildren().addAll(lineNumberLabel, spacer4, lineNumberTextArea);
 		
 		HBox buttons = new HBox();
 		buttons.setAlignment(Pos.CENTER);

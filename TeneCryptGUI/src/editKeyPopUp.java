@@ -15,7 +15,8 @@ public class editKeyPopUp {
 		Stage window = new Stage();
 		VBox Main = new VBox();
 		Main.setAlignment(Pos.CENTER);
-		Scene scene = new Scene(Main, 624, 351);
+		//Scene scene = new Scene(Main, 624, 351);
+		Scene scene = new Scene(Main, 780, 351);
 		scene.getStylesheets().add("style.css");
 		window.getIcons().add(new Image(editKeyPopUp.class.getResourceAsStream("lockedIcon.png")));
 		window.setTitle("Edit Exisiting Key");
@@ -28,9 +29,10 @@ public class editKeyPopUp {
 		
 		HBox lineNumberStuff = new HBox();
 		
-		Label lineNumberLabel = new Label("Line Number:   ");
+		Label lineNumberLabel = new Label("Line\nNumber:   ");
 		TextArea lineNumberTextArea = new TextArea();
 		lineNumberTextArea.setMaxWidth(561.6);
+		lineNumberTextArea.setMaxHeight(75);
 		
 		lineNumberStuff.setAlignment(Pos.CENTER);
 		lineNumberStuff.getChildren().addAll(lineNumberLabel, lineNumberTextArea);
@@ -40,6 +42,7 @@ public class editKeyPopUp {
 		Label newNameLabel = new Label("Name:   ");
 		TextArea newNameTextArea = new TextArea();
 		newNameTextArea.setMaxWidth(561.6);
+		newNameTextArea.setMaxHeight(75);
 		
 		newNameStuff.setAlignment(Pos.CENTER);
 		newNameStuff.getChildren().addAll(newNameLabel, newNameTextArea);
