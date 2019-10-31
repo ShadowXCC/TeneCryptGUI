@@ -84,10 +84,12 @@ public class InitialSetup extends Worker{
 			TextBox.setText(password);
 			TextBox.getStyleClass().add("initialSetupTextBox");
 			
+			Label buttonSpacer = new Label("     ");
+			
 			HBox buttons = new HBox();
 			buttons.setAlignment(Pos.CENTER);
 			
-			buttons.getChildren().addAll(Stepper, copyTextAreaButton);
+			buttons.getChildren().addAll(Stepper, buttonSpacer, copyTextAreaButton);
 			
 			centerMenu.getChildren().addAll(describer, spacer, TextBox, spacer2, buttons);
 			Stepper.setOnAction(event -> {
