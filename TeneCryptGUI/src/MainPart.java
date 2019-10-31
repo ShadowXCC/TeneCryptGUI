@@ -27,7 +27,7 @@ public class MainPart extends Worker{
 		final ClipboardContent content = new ClipboardContent();
 		
 		FailedLoginAlert.Activate();
-		window.setTitle("Title");
+		window.setTitle("Tenecrypt - Unlocked");
 		
 		VBox centerMenu = new VBox();
 		Label a = new Label("Please select a menu option.");
