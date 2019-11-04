@@ -282,22 +282,42 @@ public class MainPart extends Worker{
 			});
 			buttonTwo.setText("2");
 			buttonThree.setText("3");
+			Button buttonFour = new Button("Delete All Keys");
+			buttonFour.setOnAction(e1 -> {
+				System.out.println("Delete All Keys");
+			});
+			Label u = new Label();
+			Label v = new Label();
+			Label w = new Label();
+			
+			Button buttonFive = new Button("5");
+			Button buttonSix = new Button("6");
+			Button buttonSeven = new Button("7");
+			Button buttonEight = new Button("Factory Reset");
+			buttonEight.setOnAction(e1 -> {
+				System.out.println("Factory Reset");
+			});
+			Label x = new Label();
+			Label y = new Label();
+			Label z = new Label();
 			
 			VBox leftOptionsButtons = new VBox();
 			leftOptionsButtons.setAlignment(Pos.CENTER);
 			
-			leftOptionsButtons.getChildren().addAll(buttonOne, buttonTwo);
+			leftOptionsButtons.getChildren().addAll(buttonOne, u, buttonTwo, v, buttonThree, w, buttonFour);
 			
 			VBox rightOptionsButtons = new VBox();
 			rightOptionsButtons.setAlignment(Pos.CENTER);
 
-			rightOptionsButtons.getChildren().addAll(buttonThree);
+			rightOptionsButtons.getChildren().addAll(buttonFive, x, buttonSix, y, buttonSeven, z, buttonEight);
+			
+			Button buttonNine = new Button("Should be in center bottom");
 			
 			BorderPane allOptionsButtons = new BorderPane();
 			allOptionsButtons.setLeft(leftOptionsButtons);
 			allOptionsButtons.setRight(rightOptionsButtons);
 			
-			centerMenu.getChildren().addAll(b, a, r, allOptionsButtons, r2);
+			centerMenu.getChildren().addAll(b, a, r, allOptionsButtons, r2, buttonNine, r3);
 		});
 		
 		ImageView LockImageView = new ImageView();
