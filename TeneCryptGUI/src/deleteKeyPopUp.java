@@ -42,7 +42,14 @@ public class deleteKeyPopUp {
 		Button deleteButton = new Button("Delete");
 		deleteButton.setOnAction(e1 -> {
 			try {
-				deleteKey.Activate(Integer.parseInt(lineNumberTextArea.getText()));
+				boolean confirm = confirmationScreen.Activate("Are you sure you want to delete this key?");
+				
+				if(confirm == true) {
+					deleteKey.Activate(Integer.parseInt(lineNumberTextArea.getText()));
+				}
+				if(confirm == false) {
+					//Not confirmed
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

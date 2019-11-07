@@ -62,7 +62,14 @@ public class editKeyPopUp {
 		Button submitButton = new Button("Submit");
 		submitButton.setOnAction(e1 -> {
 			try {
-				editKey.Activate(Integer.parseInt(lineNumberTextArea.getText()), newNameTextArea.getText(), newKeyTextArea.getText());
+				boolean confirm = confirmationScreen.Activate("Are you sure you want to modify this key?");
+				
+				if(confirm == true) {
+					editKey.Activate(Integer.parseInt(lineNumberTextArea.getText()), newNameTextArea.getText(), newKeyTextArea.getText());
+				}
+				if(confirm == false) {
+					//Not confirmed
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
