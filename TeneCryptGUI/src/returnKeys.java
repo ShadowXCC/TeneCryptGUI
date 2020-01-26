@@ -14,8 +14,10 @@ public class returnKeys {
 		FP = "Data\\"+ FP;
 		Scanner FileGuts = new Scanner(new File(FP));
 		
+		int count=1;
 		while(FileGuts.hasNextLine()){
-			keysString = keysString + FileGuts.nextLine() + "\n";
+			keysString = keysString + count + ". " + FileGuts.nextLine() + "\n";
+			count++;
 		}
 				
 		FileGuts.close();
