@@ -2,6 +2,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -11,6 +12,7 @@ public class confirmationScreen {
 	
 	public static Boolean Activate(String message){		
 		Stage window = new Stage();
+		window.getIcons().add(new Image(confirmationScreen.class.getResourceAsStream("lockedIcon.png")));
 		VBox Main = new VBox();
 		Main.setAlignment(Pos.CENTER);
 		Scene scene = new Scene(Main, 312, 175.5);
