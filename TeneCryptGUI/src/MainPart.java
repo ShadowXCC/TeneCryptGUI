@@ -90,6 +90,7 @@ public class MainPart extends Worker{
 			doWork.setOnAction(e1 -> {
 				String toEncrypt = TextBox.getText();
 				try {
+					selectKeyPopup.Activate();
 					OutputTextBox.setText(encryptLogic.Activate(toEncrypt));
 				} catch (IOException e2) {
 					e2.printStackTrace();
@@ -100,6 +101,7 @@ public class MainPart extends Worker{
 			        e1.consume(); //otherwise a new line will be added to the textArea after the sendFunction() call
 			        String toEncrypt = TextBox.getText();
 					try {
+						selectKeyPopup.Activate();
 						OutputTextBox.setText(encryptLogic.Activate(toEncrypt));
 					} catch (IOException e2) {
 						e2.printStackTrace();
