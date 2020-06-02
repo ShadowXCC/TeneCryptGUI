@@ -96,7 +96,7 @@ public class MainPart extends Worker{
 					e2.printStackTrace();
 				}
 			});
-			TextBox.setOnKeyPressed(e1 -> {
+			/*TextBox.setOnKeyPressed(e1 -> {
 				if (e1.getCode() == KeyCode.ENTER) {
 			        e1.consume(); //otherwise a new line will be added to the textArea after the sendFunction() call
 			        String toEncrypt = TextBox.getText();
@@ -107,7 +107,7 @@ public class MainPart extends Worker{
 						e2.printStackTrace();
 					}
 			    }
-			});
+			});*/
 			OutputTextBox.setOnMouseClicked(e1 -> {
 				OutputTextBox.selectAll();
 			});

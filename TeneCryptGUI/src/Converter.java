@@ -112,6 +112,7 @@ public class Converter{
 		String ClosedCurlyBracket = "}";
 		String VerticalBar= "|";
 		String EqualsSign= "=";
+		String newLine = "\n";
 		
 		BigInteger CapANum = new BigInteger("437");
 		BigInteger CapBNum = new BigInteger("160");
@@ -209,6 +210,7 @@ public class Converter{
 		BigInteger ClosedCurlyBracketNum = new BigInteger("909");
 		BigInteger VerticalBarNum = new BigInteger("930");
 		BigInteger EqualsSignNum= new BigInteger("573");
+		BigInteger NewLineNum= new BigInteger("431");
 		
 		BigInteger CapANum1 = new BigInteger("832");
 		BigInteger CapBNum1 = new BigInteger("162");
@@ -306,6 +308,7 @@ public class Converter{
 		BigInteger ClosedCurlyBracketNum1 = new BigInteger("809");
 		BigInteger VerticalBarNum1 = new BigInteger("371");
 		BigInteger EqualsSignNum1= new BigInteger("159");
+		BigInteger NewLineNum1= new BigInteger("111");
 		// VARIABLE AREA END
 		
 		PrintWriter output = new PrintWriter(fw);
@@ -313,6 +316,7 @@ public class Converter{
 		if(RandomNumber == 1) {
 			for(int placeValue = 0;placeValue < ToEncryptLength;placeValue++){
 				String character = toConvert.substring(placeValue, placeValue + 1);
+				//char character = toConvert.charAt(placeValue);
 				if(character.equals(A)){
 					output.print(CapANum);
 				}
@@ -600,6 +604,9 @@ public class Converter{
 				}
 				else if(character.equals(EqualsSign)){
 					output.print(EqualsSignNum);
+				}
+				else if(character.equals(newLine)){
+					output.print(NewLineNum);
 				}
 				else {
 					output.print(questionNum);
@@ -896,6 +903,9 @@ public class Converter{
 				}
 				else if(character.equals(EqualsSign)){
 					output.print(EqualsSignNum1);
+				}
+				else if(character.equals(newLine)){
+					output.print(NewLineNum1);
 				}
 				else {
 					output.print(questionNum);

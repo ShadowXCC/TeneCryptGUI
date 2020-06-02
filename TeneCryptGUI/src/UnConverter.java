@@ -101,6 +101,7 @@ public class UnConverter{
 		String ClosedCurlyBracket = "}";
 		String VerticalBar= "|";
 		String EqualsSign= "=";
+		String newLine = "\n";
 		
 		BigInteger CapANum = new BigInteger("437");
 		BigInteger CapBNum = new BigInteger("160");
@@ -198,6 +199,7 @@ public class UnConverter{
 		BigInteger ClosedCurlyBracketNum = new BigInteger("909");
 		BigInteger VerticalBarNum = new BigInteger("930");
 		BigInteger EqualsSignNum= new BigInteger("573");
+		BigInteger NewLineNum= new BigInteger("431");
 		
 		BigInteger CapANum1 = new BigInteger("832");
 		BigInteger CapBNum1 = new BigInteger("162");
@@ -295,6 +297,7 @@ public class UnConverter{
 		BigInteger ClosedCurlyBracketNum1 = new BigInteger("809");
 		BigInteger VerticalBarNum1 = new BigInteger("371");
 		BigInteger EqualsSignNum1= new BigInteger("159");
+		BigInteger NewLineNum1= new BigInteger("111");
 		// VARIABLE AREA END
 		
 		int originalToUnconvertLength = toUnconvert.length();
@@ -596,6 +599,9 @@ public class UnConverter{
 				if(digitsNumberForm.equals(EqualsSignNum)){
 					unconverted = unconverted  + EqualsSign;
 				}
+				if(digitsNumberForm.equals(NewLineNum)){
+					unconverted = unconverted  + newLine;
+				}
 
 				placeValue++;
 				placeValue++;
@@ -892,6 +898,9 @@ public class UnConverter{
 				}
 				if(digitsNumberForm.equals(EqualsSignNum1)){
 					unconverted = unconverted  + EqualsSign;
+				}
+				if(digitsNumberForm.equals(NewLineNum1)){
+					unconverted = unconverted  + newLine;
 				}
 
 				placeValue++;
