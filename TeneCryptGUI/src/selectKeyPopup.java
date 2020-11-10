@@ -34,6 +34,7 @@ public class selectKeyPopup {
 		TextArea keyTextArea = new TextArea(keys);
 		keyTextArea.setMaxWidth(263.25);
 		keyTextArea.setMinHeight(375);
+		keyTextArea.setEditable(false);
 		TextArea selectionTextArea = new TextArea("");
 		selectionTextArea.setMaxSize(263.25, 50);
 		
