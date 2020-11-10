@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import javafx.event.EventHandler;
@@ -25,6 +26,11 @@ public class MainPart extends Worker{
 	public static Scene Activate() throws FileNotFoundException{
 		Clipboard clipboard = Clipboard.getSystemClipboard();
 		final ClipboardContent content = new ClipboardContent();
+		
+		int lineNumber = 5;
+		String FP = ReturnFileName.Activate(lineNumber);
+		FP = "Data\\"+ FP;
+		boolean doesKeyFileExist = new File(FP).exists();
 		
 		FailedLoginAlert.Activate();
 		window.setTitle("Tenecrypt - Unlocked");
@@ -88,12 +94,17 @@ public class MainPart extends Worker{
 			
 			doWork.setText("Encrypt");
 			doWork.setOnAction(e1 -> {
-				String toEncrypt = TextBox.getText();
-				try {
-					selectKeyPopup.Activate();
-					OutputTextBox.setText(encryptLogic.Activate(toEncrypt));
-				} catch (IOException e2) {
-					e2.printStackTrace();
+				if (doesKeyFileExist == true) {
+					String toEncrypt = TextBox.getText();
+					try {
+						selectKeyPopup.Activate();
+						OutputTextBox.setText(encryptLogic.Activate(toEncrypt));
+					} catch (IOException e2) {
+						e2.printStackTrace();
+					}
+				}
+				else {
+					noKeyFilePopup.Activate();
 				}
 			});
 			/*TextBox.setOnKeyPressed(e1 -> {
@@ -157,13 +168,19 @@ public class MainPart extends Worker{
 			
 			doWork.setText("Decrypt");
 			doWork.setOnAction(e1 -> {
-				String toDecrypt = TextBox.getText();
-				try {
-					OutputTextBox.setText(decryptLogic.Activate(toDecrypt));
-				} catch (IOException e2) {
-					e2.printStackTrace();
+				if (doesKeyFileExist == true) {
+					String toDecrypt = TextBox.getText();
+					try {
+						OutputTextBox.setText(decryptLogic.Activate(toDecrypt));
+					} catch (IOException e2) {
+						e2.printStackTrace();
+					}
+				}
+				else {
+					noKeyFilePopup.Activate();
 				}
 			});
+			
 			TextBox.setOnKeyPressed(e1 -> {
 				if (e1.getCode() == KeyCode.ENTER) {
 			        e1.consume(); //otherwise a new line will be added to the textArea after the sendFunction() call
